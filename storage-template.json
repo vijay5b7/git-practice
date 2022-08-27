@@ -32,6 +32,12 @@
             "metadata": {
                 "description": "The name of the Storage Account"
             }
+        },
+         "containerName": {
+            "type": "String",
+            "metadata": {
+                "description": "The name of the Storage Account"
+            }
         }
     },
     "resources": [
