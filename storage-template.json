@@ -44,18 +44,18 @@
                 "name": "[parameters('storageAccountType')]"
             },
             "kind": "StorageV2",
-            "properties": {}
-        },
-        "resources": [
-           {
-              "type": "blobServices/containers",
-              "apiVersion": "2019-06-01",
-              "name": "[parameters('containerName'))]",
-              "dependsOn": [
-                "[parameters('storageAccountName')]"
-              ]
-            }
-        ]
+            "properties": {},
+            "resources": [
+                {
+                   "type": "blobServices/containers",
+                   "apiVersion": "2019-06-01",
+                   "name": "[parameters('containerName'))]",
+                   "dependsOn": [
+                     "[parameters('storageAccountName')]"
+                   ]
+                 }
+             ]
+        }
     ],
     "outputs": {
         "storageAccountName": {
