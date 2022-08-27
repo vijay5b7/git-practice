@@ -55,7 +55,7 @@
                 {
                    "type": "blobServices/containers",
                    "apiVersion": "2019-06-01",
-                   "name": "[parameters('containerName'))]",
+                   "name": "[parameters('containerName')]",
                    "dependsOn": [
                      "[parameters('storageAccountName')]"
                    ]
