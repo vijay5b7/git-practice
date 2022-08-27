@@ -10,6 +10,9 @@
         },
         "storageAccountName": {
             "value": "store3axd3n4sxn2sg"
+        },
+        "containerName": {
+            "value": "test-container"
         }
     }
 }
