@@ -58,8 +58,7 @@
                     "name": "[concat(parameters('storageAccountName'), '/default/', parameters('containerName'))]",
                     "properties": {},
                         "metadata": {},
-                        "publicAccess": "string"
-                    },
+                        "publicAccess": "string",
                     "dependsOn": [
                         "[parameters('storageAccountName')]"
                     ]
