@@ -53,9 +53,20 @@
             "properties": {}
         },
         {
-           "type": "Microsoft.Storage/storageAccounts/blobServices/containers",
-            "apiVersion": "2021-06-01",
+            "type": "Microsoft.Storage/storageAccounts/blobServices/containers",
+            "apiVersion": "2021-09-01",
             "name": "[parameters('containerName')]",
+            "properties": {
+                "defaultEncryptionScope": "string",
+                "denyEncryptionScopeOverride": "bool",
+                "enableNfsV3AllSquash": "bool",
+                "enableNfsV3RootSquash": "bool",
+                "immutableStorageWithVersioning": {
+                "enabled": "bool"
+                },
+                "metadata": {},
+                "publicAccess": "string"
+            },
             "dependsOn": [
                 "[parameters('storageAccountName')]"
             ]
