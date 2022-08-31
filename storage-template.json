@@ -55,7 +55,7 @@
                    {
                     "type": "Microsoft.Storage/storageAccounts/blobServices/containers",
                     "apiVersion": "2021-09-01",
-                    "name": "[concat('default/',parameters('containerName')]",
+                    "name": "[concat('default/',parameters('containerName'))]",
                     "properties": {
                         "defaultEncryptionScope": "string",
                         "denyEncryptionScopeOverride": "bool",
