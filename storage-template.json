@@ -40,38 +40,40 @@
             }
         }
     },
-    "resources": [
-        {
-            "type": "Microsoft.Storage/storageAccounts",
-            "apiVersion": "2021-06-01",
-            "name": "[parameters('storageAccountName')]",
-            "location": "[parameters('location')]",
-            "sku": {
-                "name": "[parameters('storageAccountType')]"
-            },
-            "kind": "StorageV2",
-            "properties": {}
-        },
-        {
-            "type": "Microsoft.Storage/storageAccounts/blobServices/containers",
-            "apiVersion": "2021-09-01",
-            "name": "[parameters('containerName')]",
-            "properties": {
-                "defaultEncryptionScope": "string",
-                "denyEncryptionScopeOverride": "bool",
-                "enableNfsV3AllSquash": "bool",
-                "enableNfsV3RootSquash": "bool",
-                "immutableStorageWithVersioning": {
-                "enabled": "bool"
+        "resources": [
+            {
+                "type": "Microsoft.Storage/storageAccounts",
+                "apiVersion": "2021-06-01",
+                "name": "[parameters('storageAccountName')]",
+                "location": "[parameters('location')]",
+                "sku": {
+                    "name": "[parameters('storageAccountType')]"
                 },
-                "metadata": {},
-                "publicAccess": "string"
-            },
-            "dependsOn": [
-                "[parameters('storageAccountName')]"
-            ]
-        }
-    ],
+                "kind": "StorageV2",
+                "properties": {},
+                "resources": [
+                   {
+                    "type": "Microsoft.Storage/storageAccounts/blobServices/containers",
+                    "apiVersion": "2021-09-01",
+                    "name": "[parameters('containerName')]",
+                    "properties": {
+                        "defaultEncryptionScope": "string",
+                        "denyEncryptionScopeOverride": "bool",
+                        "enableNfsV3AllSquash": "bool",
+                        "enableNfsV3RootSquash": "bool",
+                        "immutableStorageWithVersioning": {
+                        "enabled": "bool"
+                        },
+                        "metadata": {},
+                        "publicAccess": "string"
+                    },
+                    "dependsOn": [
+                        "[parameters('storageAccountName')]"
+                    ]
+                   }
+                ]
+            }
+        ],
     "outputs": {
         "storageAccountName": {
             "type": "String",
