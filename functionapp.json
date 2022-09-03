@@ -5,11 +5,11 @@
     "functions": [],
     "variables": {},
     "resources":[{
-        "name": "storageaccount1",
+        "name": "storageaccountwnstest",
         "type": "Microsoft.Storage/storageAccounts",
         "apiVersion": "2021-04-01",
         "tags": {
-            "displayName": "storageaccount1"
+            "displayName": "storageaccountwnstest"
         },
         "location": "[resourceGroup().location]",
         "kind": "StorageV2",
@@ -42,7 +42,7 @@
             "kind": "functionapp",
             "dependsOn": [
                 "[resourceId('Microsoft.Web/serverfarms', 'appServicePlan1')]",
-                "[resourceId('Microsoft.Storage/storageAccounts', 'storageaccount1')]"
+                "[resourceId('Microsoft.Storage/storageAccounts', 'storageaccountwnstest')]"
             ],
             "properties": {
                 "serverFarmId": "[resourceId('Microsoft.Web/serverfarms', 'appServicePlan1')]",
@@ -50,15 +50,15 @@
                     "appSettings": [
                         {
                             "name": "AzureWebJobsDashboard",
-                            "value": "[concat('DefaultEndpointsProtocol=https;AccountName=', 'storageaccount1', ';AccountKey=', listKeys(resourceId('Microsoft.Storage/storageAccounts', 'storageaccount1'),'2017-06-01').keys[0].value)]"
+                            "value": "[concat('DefaultEndpointsProtocol=https;AccountName=', 'storageaccount1', ';AccountKey=', listKeys(resourceId('Microsoft.Storage/storageAccounts', 'storageaccountwnstest'),'2017-06-01').keys[0].value)]"
                         },
                         {
                             "name": "AzureWebJobsStorage",
-                            "value": "[concat('DefaultEndpointsProtocol=https;AccountName=', 'storageaccount1', ';AccountKey=', listKeys(resourceId('Microsoft.Storage/storageAccounts', 'storageaccount1'),'2017-06-01').keys[0].value)]"
+                            "value": "[concat('DefaultEndpointsProtocol=https;AccountName=', 'storageaccount1', ';AccountKey=', listKeys(resourceId('Microsoft.Storage/storageAccounts', 'storageaccountwnstest'),'2017-06-01').keys[0].value)]"
                         },
                         {
                             "name": "WEBSITE_CONTENTAZUREFILECONNECTIONSTRING",
-                            "value": "[concat('DefaultEndpointsProtocol=https;AccountName=', 'storageaccount1', ';AccountKey=', listKeys(resourceId('Microsoft.Storage/storageAccounts', 'storageaccount1'),'2017-06-01').keys[0].value)]"
+                            "value": "[concat('DefaultEndpointsProtocol=https;AccountName=', 'storageaccount1', ';AccountKey=', listKeys(resourceId('Microsoft.Storage/storageAccounts', 'storageaccountwnstest'),'2017-06-01').keys[0].value)]"
                         },
                         {
                             "name": "WEBSITE_CONTENTSHARE",
